@@ -198,14 +198,19 @@ window.onload = function() {
 
   setDayOrNight();
 
-  if ((hour >= 22 || hour < 9) && !isSleeping) {
-    forceSleepAtNight();
+  // 👉 Fix: Wenn jetzt Tageszeit ist (9-22 Uhr), dann automatisch aufwachen
+  if (hour >= 9 && hour < 22) {
+    if (isSleeping) {
+      isSleeping = false;
+      isWakingUp = true;
+      showMessage("Good Morning sweetie! ☀️");
+    }
   }
 
   checkWakeUp();
   update();
 
-  // NEU: Direkt beim Start passende Nachricht anzeigen
+  // Direkte Message setzen (angepasst)
   if (isSleeping) {
     showMessage("I'm dreaming about you... 😴");
   } else if (isWakingUp) {
@@ -214,6 +219,7 @@ window.onload = function() {
     showMessage("Hope you have a great Day! 🧸");
   }
 };
+
 
 
 
