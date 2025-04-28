@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My little Tamagotchi 🐣</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Your little Tamamaris </h1>
+
+    <div class="tamagotchi-container">
+      <img id="tamagotchi" src="happy.png" alt="Tamagotchi">
+      <div class="message" id="messageArea"></div> <!-- NEU für Messages -->
+    </div>
+    
+
+    <div class="stats">
+      <p>🍔 Hunger: <span id="hunger">0</span></p>
+      <p>😊 Happiness: <span id="happiness">100</span></p>
+    </div>
+
+    <div class="buttons">
+      <button onclick="feed()">🍔 Feed</button>
+      <button onclick="hug()">🤗 Cuddle</button>
+      <button id="sleepButton" onclick="sleep()">Sleep 😴</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

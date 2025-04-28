@@ -1,0 +1,108 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f0c782;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 6vw;
+  margin: 20px 0;
+}
+
+img {
+  width: 40vw;
+  max-width: 300px;
+  min-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.stats {
+  margin-top: 15px;
+  font-size: 4vw;
+  max-width: 90%;
+}
+
+.stats p {
+  margin: 5px 0;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 4vw;
+  max-width: 90%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ff8fa3;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #ff5c77;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 4vw;
+  font-weight: bold;
+  color: #ff5c77;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Nachtmodus */
+body.night {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* Tagmodus */
+body.day {
+  background-color: #f0c782;
+  color: black;
+}
+
+/* Spezielle Anpassungen für ganz kleine Geräte */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 8vw;
+  }
+  
+  img {
+    width: 60vw;
+  }
+  
+  .stats {
+    font-size: 5vw;
+  }
+
+  .buttons button {
+    font-size: 5vw;
+  }
+
+  .message {
+    font-size: 5vw;
+  }
+}
