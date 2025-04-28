@@ -67,7 +67,7 @@ function feed() {
 
 function hug() {
   if (isSleeping) {
-    showMessage("I'm dreaming... 🌙✨");
+    showMessage("Besitos... 😚🌙✨");
     return;
   }
   happiness = Math.min(100, happiness + 10);
@@ -192,23 +192,29 @@ function setDayOrNight() {
 
 window.onload = function() {
   loadState();
-  setDayOrNight();
-
+  
   const realHour = new Date().getHours();
   const hour = useTestHour ? testHour : realHour;
 
-  // Automatisch schlafen, wenn es Nacht ist oder früh morgens
-  if ((hour >= 22 || hour < 9)) {
-    if (!isSleeping) {
-      isSleeping = true;
-      isWakingUp = false;
-      saveState();  // NEU: gleich speichern!
-    }
+  setDayOrNight();
+
+  if ((hour >= 22 || hour < 9) && !isSleeping) {
+    forceSleepAtNight();
   }
 
   checkWakeUp();
   update();
+
+  // NEU: Direkt beim Start passende Nachricht anzeigen
+  if (isSleeping) {
+    showMessage("I'm dreaming about you... 😴");
+  } else if (isWakingUp) {
+    showMessage("Good Morning sweetie! ☀️");
+  } else {
+    showMessage("Hope you have a great Day! 🧸");
+  }
 };
+
 
 
 setInterval(() => {
